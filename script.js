@@ -22,7 +22,13 @@ function renderizarContactos() {
       <div class="tarjeta-contacto">
         <h3>${c.nombre}</h3>
         <p>📞 ${c.telefono} | ✉️ ${c.correo}</p>
+        <button onclick="eliminarContacto(${c.id})">Eliminar</button>
       </div>
     `;
   });
+}
+
+function eliminarContacto(id) {
+  contactos = contactos.filter((c) => c.id !== id);
+  renderizarContactos();
 }
